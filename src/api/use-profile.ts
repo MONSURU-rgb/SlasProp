@@ -5,5 +5,6 @@ export function useGetProfile() {
   return useQuery({
     queryKey: builder.user.profile.$get(),
     queryFn: builder.$use.user.profile,
+    select: ({ data }) => data,
   });
 }

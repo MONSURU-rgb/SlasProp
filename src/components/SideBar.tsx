@@ -1,5 +1,4 @@
-import React from "react";
-import sampleImage from "../assets/profile-picture.png";
+import Link from "next/link";
 
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import {
@@ -14,14 +13,12 @@ import {
   Typography,
 } from "@mui/material";
 
-import { Link } from "react-router-dom";
-import { useLocalStorage } from "@/hooks/use-local-storage";
 import { useGetProfile } from "@/api/use-profile";
+import sampleImage from "../assets/profile-picture.png";
 
 const SideBar = () => {
-  const [username] = useLocalStorage<string>("username");
   const { data } = useGetProfile();
-  console.log({ data });
+
   return (
     <Box
       sx={{
@@ -50,7 +47,7 @@ const SideBar = () => {
             <Box>
               <Typography
                 sx={{ fontWeight: "bold", fontSize: "18px", color: "black" }}>
-                {username}
+                {data?.data?.firstName} {data?.data?.lastName}
               </Typography>
               <Typography sx={{ fontSize: "12px" }}>
                 User ID :#269d91
@@ -75,80 +72,99 @@ const SideBar = () => {
           </Box>
         </Container>
 
-        <ListItem disablePadding>
-          <ListItemButton
-            sx={{ borderBottom: "1px solid lightgrey" }}
-            component={Link}
-            to="/dashboard">
-            <ListItemText
-              sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
-              primaryTypographyProps={{ fontSize: "12px" }}
-              primary="Dashboard"
-            />
-          </ListItemButton>
-        </ListItem>
+        <Link
+          href="/dashboard"
+          style={{
+            textDecoration: "none",
+          }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderBottom: "1px solid lightgrey" }}>
+              <ListItemText
+                sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
+                primaryTypographyProps={{ fontSize: "12px" }}
+                primary="Dashboard"
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link
+          href="/manage-officers"
+          style={{
+            textDecoration: "none",
+          }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderBottom: "1px solid lightgrey" }}>
+              <ListItemText
+                sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
+                primaryTypographyProps={{ fontSize: "12px" }}
+                primary="Manage Officers"
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link
+          href="/manage-content"
+          style={{
+            textDecoration: "none",
+          }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderBottom: "1px solid lightgrey" }}>
+              <ListItemText
+                sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
+                primaryTypographyProps={{ fontSize: "12px" }}
+                primary="Manage Content"
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
 
-        <ListItem disablePadding>
-          <ListItemButton
-            sx={{ borderBottom: "1px solid lightgrey" }}
-            component={Link}
-            to="/dashboard/manage-officers">
-            <ListItemText
-              sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
-              primaryTypographyProps={{ fontSize: "12px" }}
-              primary="Manage Officers"
-            />
-          </ListItemButton>
-        </ListItem>
+        <Link
+          href="/user-roles"
+          style={{
+            textDecoration: "none",
+          }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderBottom: "1px solid lightgrey" }}>
+              <ListItemText
+                sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
+                primaryTypographyProps={{ fontSize: "12px" }}
+                primary="User Roles"
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
 
-        <ListItem disablePadding>
-          <ListItemButton
-            sx={{ borderBottom: "1px solid lightgrey" }}
-            component={Link}
-            to="/dashboard/manage-content">
-            <ListItemText
-              sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
-              primaryTypographyProps={{ fontSize: "12px" }}
-              primary="Manage Content"
-            />
-          </ListItemButton>
-        </ListItem>
+        <Link
+          href="/reports"
+          style={{
+            textDecoration: "none",
+          }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderBottom: "1px solid lightgrey" }}>
+              <ListItemText
+                sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
+                primaryTypographyProps={{ fontSize: "12px" }}
+                primary="Reports"
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
 
-        <ListItem disablePadding>
-          <ListItemButton
-            sx={{ borderBottom: "1px solid lightgrey" }}
-            component={Link}
-            to="/dashboard/user-roles">
-            <ListItemText
-              sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
-              primaryTypographyProps={{ fontSize: "12px" }}
-              primary="User Roles"
-            />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton
-            sx={{ borderBottom: "1px solid lightgrey" }}
-            component={Link}
-            to="/dashboard/reports">
-            <ListItemText
-              sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
-              primaryTypographyProps={{ fontSize: "12px" }}
-              primary="Reports"
-            />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="/dashboard/notifications">
-            <ListItemText
-              sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
-              primaryTypographyProps={{ fontSize: "12px" }}
-              primary="Notifications"
-            />
-          </ListItemButton>
-        </ListItem>
+        <Link
+          href="/notifications"
+          style={{
+            textDecoration: "none",
+          }}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText
+                sx={{ color: "#26a69a", textTransform: "uppercase", ml: 2 }}
+                primaryTypographyProps={{ fontSize: "12px" }}
+                primary="Notifications"
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
       </List>
     </Box>
   );

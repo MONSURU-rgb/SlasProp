@@ -20,6 +20,7 @@ import { useLocalStorage } from "@/hooks/use-local-storage";
 import { useLogin } from "../api/use-login";
 import { showToast } from "@/utils/toast-style";
 import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/stores/useAuthStore";
 
 const schema = object({
   username: string().required(),
@@ -37,6 +38,7 @@ const LoginForm = () => {
   const [, setToken] = useLocalStorage<string>("token");
   const [, setUsername] = useLocalStorage<string>("username");
   const { push } = useRouter();
+  const { setToken: userToken } = useAuthStore.getState();
 
   const form = useForm({
     initialValues: {
@@ -52,6 +54,7 @@ const LoginForm = () => {
     login(values, {
       onSuccess: (response) => {
         setToken(response.data.access_token);
+        userToken(response.data.access_token);
         showToast("success", <p>Login Successful! {response.message}</p>);
         setUsername(response.data.username);
         push("/dashboard");
