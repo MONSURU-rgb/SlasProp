@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
-import TextEditor from "./TextEditor";
 import { Box, TextField, Typography } from "@mui/material";
-import Footer from "./Footer";
 import Link from "next/link";
+import Footer from "./Footer";
+import TextEditor from "./TextEditor";
 
 const AddNewContent = () => {
   return (
@@ -17,7 +16,8 @@ const AddNewContent = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Add New Content
           </Typography>
@@ -31,7 +31,8 @@ const AddNewContent = () => {
               marginLeft: 2,
               padding: 2,
               textTransform: "capitalize",
-            }}>
+            }}
+          >
             Publish
           </Link>
         </Box>

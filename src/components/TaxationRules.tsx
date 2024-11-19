@@ -1,8 +1,7 @@
-import React from "react";
-import TextEditor from "./TextEditor";
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import Footer from "./Footer";
+import TextEditor from "./TextEditor";
 
 const TaxationRules = () => {
   return (
@@ -15,7 +14,8 @@ const TaxationRules = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Taxation Rules
           </Typography>
@@ -29,7 +29,8 @@ const TaxationRules = () => {
               marginLeft: 2,
               padding: 2,
               textTransform: "capitalize",
-            }}>
+            }}
+          >
             Update Content
           </Link>
         </Box>

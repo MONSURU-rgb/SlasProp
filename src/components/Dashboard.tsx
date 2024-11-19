@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Box, Typography } from "@mui/material";
 
 import Footer from "./Footer";
@@ -14,7 +12,8 @@ const Dashboard = () => {
           mt: 4,
           borderBottom: "1px solid lightgray",
           pb: 2,
-        }}>
+        }}
+      >
         <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
           Dashboard
         </Typography>
@@ -27,19 +26,22 @@ const Dashboard = () => {
           display: "flex",
           pr: 4,
           justifyContent: "space-between",
-        }}>
+        }}
+      >
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             p: 2,
             border: "1px solid lightgrey",
-          }}>
+          }}
+        >
           <Typography sx={{ fontWeight: "bold", fontSize: 16 }}>
             Total Officers
           </Typography>
           <Typography
-            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}>
+            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}
+          >
             123
           </Typography>
         </Box>
@@ -50,12 +52,14 @@ const Dashboard = () => {
             flexDirection: "column",
             p: 2,
             border: "1px solid lightgrey",
-          }}>
+          }}
+        >
           <Typography sx={{ fontWeight: "bold", fontSize: 16 }}>
             Total Users
           </Typography>
           <Typography
-            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}>
+            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}
+          >
             1345
           </Typography>
         </Box>
@@ -66,12 +70,14 @@ const Dashboard = () => {
             flexDirection: "column",
             p: 2,
             border: "1px solid lightgrey",
-          }}>
+          }}
+        >
           <Typography sx={{ fontWeight: "bold", fontSize: 16 }}>
             Total Field Tasks
           </Typography>
           <Typography
-            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}>
+            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}
+          >
             768
           </Typography>
         </Box>
@@ -82,12 +88,14 @@ const Dashboard = () => {
             flexDirection: "column",
             p: 2,
             border: "1px solid lightgrey",
-          }}>
+          }}
+        >
           <Typography sx={{ fontWeight: "bold", fontSize: 16 }}>
             User Roles
           </Typography>
           <Typography
-            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}>
+            sx={{ fontWeight: "bold", fontSize: 17, color: "orange" }}
+          >
             15
           </Typography>
         </Box>

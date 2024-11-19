@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Icon } from "leaflet";
-import React from "react";
+
 import { MapContainer, Marker, Popup } from "react-leaflet";
 import { TileLayer } from "react-leaflet/TileLayer";
 
@@ -21,7 +21,8 @@ const Location = () => {
         center={[51.505, -0.09]}
         zoom={13}
         scrollWheelZoom={false}
-        style={{ height: "50vh", width: "100%" }}>
+        style={{ height: "50vh", width: "100%" }}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -1,25 +1,24 @@
-import React from "react";
-import Login from "./components/login-page.tsx";
-import { Route, Routes } from "react-router-dom";
-import ProtectedRoute from "./routes/ProtectedRoute";
-import { AuthProvider } from "./hooks/useAuth";
-import ManageContent from "./components/ManageContent.tsx";
-import ManageOfficers from "./components/ManageOfficers.tsx";
-import UserRoles from "./components/UserRoles.tsx";
-import Reports from "./components/Reports.tsx";
-import DashboardLayout from "./components/DashboardLayout";
-import Notifications from "./components/Notifications.tsx";
-import Dashboard from "./components/Dashboard";
-import TaxationRules from "./components/TaxationRules.tsx";
-import AddNewContent from "./components/AddNewContent.tsx";
-import TaxPaymentReport from "./components/TaxPaymentReport.tsx";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Route, Routes } from "react-router-dom";
+import AddNewContent from "./components/AddNewContent.tsx";
+import Dashboard from "./components/Dashboard";
+import DashboardLayout from "./components/DashboardLayout";
+import Login from "./components/login-page.tsx";
+import ManageContent from "./components/ManageContent.tsx";
+import ManageOfficers from "./components/ManageOfficers.tsx";
+import Notifications from "./components/Notifications.tsx";
 import OfficerDetails from "./components/OfficerDetails.tsx";
-import Tasks from "./components/Tasks.tsx";
 import ParcelDataPackets from "./components/ParcelDataPackets.tsx";
-import Location from "./pages/Location.tsx";
 import RegistrationRules from "./components/RegistrationRules.tsx";
+import Reports from "./components/Reports.tsx";
+import Tasks from "./components/Tasks.tsx";
+import TaxationRules from "./components/TaxationRules.tsx";
+import TaxPaymentReport from "./components/TaxPaymentReport.tsx";
+import UserRoles from "./components/UserRoles.tsx";
+import { AuthProvider } from "./hooks/useAuth";
+import Location from "./pages/Location.tsx";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 const App = () => {
   return (
@@ -33,13 +32,15 @@ const App = () => {
               <ProtectedRoute>
                 <DashboardLayout />
               </ProtectedRoute>
-            }>
+            }
+          >
             <Route index element={<Dashboard />} />
             <Route path="manage-content" element={<ManageContent />} />
 
             <Route
               path="officer-details/:officerID"
-              element={<OfficerDetails />}>
+              element={<OfficerDetails />}
+            >
               <Route path="tasks" element={<Tasks />} />
               <Route
                 path="parcel-data-packets"

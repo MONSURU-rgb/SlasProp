@@ -1,6 +1,4 @@
-import React from "react";
-
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -15,7 +13,8 @@ const Reports = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Reports
           </Typography>
@@ -27,7 +26,8 @@ const Reports = () => {
             justifyContent: "space-evenly",
             marginLeft: "25%",
             mt: 4,
-          }}>
+          }}
+        >
           <Box sx={{ border: "1px solid lightgrey", p: 3, display: "flex" }}>
             <Button
               sx={{
@@ -37,7 +37,8 @@ const Reports = () => {
                 textTransform: "capitalize",
               }}
               component={Link}
-              to="/dashboard/tax-payment-report">
+              to="/dashboard/tax-payment-report"
+            >
               Tax Payment By End Users
             </Button>
           </Box>
@@ -51,7 +52,8 @@ const Reports = () => {
                 textTransform: "capitalize",
               }}
               component={Link}
-              to="/dashboard/tax-payment-report">
+              to="/dashboard/tax-payment-report"
+            >
               Queries From End Users
             </Button>
           </Box>
@@ -65,7 +67,8 @@ const Reports = () => {
                 textTransform: "capitalize",
               }}
               component={Link}
-              to="/dashboard/tax-payment-report">
+              to="/dashboard/tax-payment-report"
+            >
               Field Tasks
             </Button>
           </Box>
@@ -79,7 +82,8 @@ const Reports = () => {
                 textTransform: "capitalize",
               }}
               component={Link}
-              to="/dashboard/tax-payment-report">
+              to="/dashboard/tax-payment-report"
+            >
               Certificate of Occupancy
             </Button>
           </Box>

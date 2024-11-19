@@ -1,10 +1,9 @@
-import React from "react";
 import Logo from "../assets/Logo.png";
 import LoginImage from "../assets/login-image.png";
 
+import Footer from "@/components/Footer";
 import { Box } from "@mui/material";
 import LoginForm from "../forms/loginForm";
-import Footer from "@/components/Footer";
 
 const Login = () => {
   return (
@@ -14,7 +13,8 @@ const Login = () => {
         flexDirection: "column",
         height: "100%",
         flex: 1,
-      }}>
+      }}
+    >
       <div style={{ display: "flex", flex: 1, maxHeight: 50, paddingLeft: 20 }}>
         <Box
           component="img"
@@ -33,7 +33,8 @@ const Login = () => {
           mt: 2,
           pl: 4,
           justifyContent: "space-between",
-        }}>
+        }}
+      >
         <LoginForm />
         <Box
           component="img"

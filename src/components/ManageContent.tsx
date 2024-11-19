@@ -1,8 +1,6 @@
-import React from "react";
-
-import { Box, Typography, Button } from "@mui/material";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AddIcon from "@mui/icons-material/Add";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -17,7 +15,8 @@ const ManageContent = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Manage Contents & Attributes
           </Typography>
@@ -33,7 +32,8 @@ const ManageContent = () => {
               p: 2,
               textTransform: "capitalize",
               "&:hover": { backgroundColor: "#26a69a" },
-            }}>
+            }}
+          >
             <AddIcon /> &nbsp;Add New Content
           </Button>
         </Box>
@@ -44,10 +44,12 @@ const ManageContent = () => {
             justifyContent: "space-evenly",
             marginLeft: "25%",
             mt: 4,
-          }}>
+          }}
+        >
           <Box sx={{ border: "1px solid lightgrey", p: 3, display: "flex" }}>
             <Typography
-              sx={{ fontWeight: "bold", fontSize: "13px", marginRight: 2 }}>
+              sx={{ fontWeight: "bold", fontSize: "13px", marginRight: 2 }}
+            >
               Location
             </Typography>
 
@@ -56,7 +58,8 @@ const ManageContent = () => {
 
           <Box sx={{ border: "1px solid lightgrey", p: 3, display: "flex" }}>
             <Typography
-              sx={{ fontWeight: "bold", fontSize: "13px", marginRight: 2 }}>
+              sx={{ fontWeight: "bold", fontSize: "13px", marginRight: 2 }}
+            >
               Zones
             </Typography>
 
@@ -73,7 +76,8 @@ const ManageContent = () => {
                 textTransform: "capitalize",
               }}
               component={Link}
-              to="/dashboard/edit-taxation-rules">
+              to="/dashboard/edit-taxation-rules"
+            >
               Taxation Rules
             </Button>
 
@@ -90,7 +94,8 @@ const ManageContent = () => {
                 textTransform: "capitalize",
               }}
               component={Link}
-              to="/dashboard/edit-registration-rules">
+              to="/dashboard/edit-registration-rules"
+            >
               Registration Rules
             </Button>
 

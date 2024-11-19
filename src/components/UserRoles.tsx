@@ -1,9 +1,7 @@
-import React from "react";
-
-import { Box, Typography } from "@mui/material";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import AddNewRoleDrawer from "./AddNewRoleDrawer";
 import Footer from "@/components/Footer";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Box, Typography } from "@mui/material";
+import AddNewRoleDrawer from "./AddNewRoleDrawer";
 
 const UserRoles = () => {
   return (
@@ -12,7 +10,8 @@ const UserRoles = () => {
         display: "flex",
         flexDirection: "column",
         flex: 1,
-      }}>
+      }}
+    >
       <Box
         sx={{
           mt: 4,
@@ -21,7 +20,8 @@ const UserRoles = () => {
           px: 4,
           display: "flex",
           ml: "25%",
-        }}>
+        }}
+      >
         <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
           User Roles
         </Typography>
@@ -35,7 +35,8 @@ const UserRoles = () => {
               display: "flex",
               justifyContent: "space-between",
               mt: 2,
-            }}>
+            }}
+          >
             <Box sx={{ border: "1px solid lightgrey", p: 3, display: "flex" }}>
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 End Users
@@ -74,14 +75,16 @@ const UserRoles = () => {
               display: "flex",
               justifyContent: "space-evenly",
               mt: 2,
-            }}>
+            }}
+          >
             <Box
               sx={{
                 border: "1px solid lightgrey",
                 p: 3,
                 display: "flex",
                 marginRight: 2,
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Recording Officer
               </Typography>
@@ -95,7 +98,8 @@ const UserRoles = () => {
                 p: 3,
                 display: "flex",
                 marginRight: 2,
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Field Assistant
               </Typography>
@@ -109,7 +113,8 @@ const UserRoles = () => {
                 p: 3,
                 display: "flex",
                 marginRight: 2,
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 SLTR Officer & Deputy SLTR Officer
               </Typography>
@@ -123,7 +128,8 @@ const UserRoles = () => {
                 p: 3,
                 display: "flex",
                 marginRight: 2,
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Lands Records Bureau
               </Typography>
@@ -140,13 +146,15 @@ const UserRoles = () => {
               mt: 2,
               mb: 14,
               gap: 2,
-            }}>
+            }}
+          >
             <Box
               sx={{
                 border: "1px solid lightgrey",
                 p: 3,
                 display: "flex",
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Surveyor General
               </Typography>
@@ -159,7 +167,8 @@ const UserRoles = () => {
                 border: "1px solid lightgrey",
                 p: 3,
                 display: "flex",
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Cheif Registrar & Assistant Registrar of Deeds
               </Typography>
@@ -173,7 +182,8 @@ const UserRoles = () => {
                 p: 3,
                 display: "flex",
                 marginRight: 2,
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Governors
               </Typography>
@@ -187,7 +197,8 @@ const UserRoles = () => {
                 p: 3,
                 display: "flex",
                 marginRight: 2,
-              }}>
+              }}
+            >
               <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
                 Contents & Attributes
               </Typography>

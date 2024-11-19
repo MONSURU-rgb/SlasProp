@@ -5,6 +5,7 @@ import React, { PropsWithChildren } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import { AuthProvider } from "@/hooks/use-auth";
+import ToastProvider from "@/utils/toast";
 
 const queryClient = new QueryClient();
 
@@ -13,9 +14,9 @@ type TemplateProps = PropsWithChildren;
 export default function Template({ children }: TemplateProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <ToastProvider>
         <AuthProvider> {children}</AuthProvider>
-      </BrowserRouter>
+      </ToastProvider>
     </QueryClientProvider>
   );
 }

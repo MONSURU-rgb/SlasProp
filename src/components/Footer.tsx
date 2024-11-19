@@ -1,5 +1,11 @@
-import React from "react";
-
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import CopyrightIcon from "@mui/icons-material/Copyright";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import XIcon from "@mui/icons-material/X";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import {
   Box,
   IconButton,
@@ -10,14 +16,6 @@ import {
   Typography,
 } from "@mui/material";
 import sampleImage from "../assets/Logo.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import XIcon from "@mui/icons-material/X";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import CopyrightIcon from "@mui/icons-material/Copyright";
 
 const Footer = () => {
   return (
@@ -25,14 +23,16 @@ const Footer = () => {
       style={{
         position: "sticky",
         bottom: 0,
-      }}>
+      }}
+    >
       <div
         style={{
           backgroundColor: "#18784E",
           color: "white",
           display: "flex",
           borderBottom: "1px solid #1C8C5B",
-        }}>
+        }}
+      >
         <Box sx={{ display: "flex", flexDirection: "column", py: 4, px: 10 }}>
           <Box
             component="img"
@@ -50,21 +50,26 @@ const Footer = () => {
               py: 2,
               justifyContent: "space-between",
               maxWidth: 120,
-            }}>
+            }}
+          >
             <IconButton
-              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}>
+              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}
+            >
               <FacebookIcon sx={{ fontSize: "16px", color: "black" }} />
             </IconButton>
             <IconButton
-              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}>
+              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}
+            >
               <XIcon sx={{ fontSize: "16px", color: "black" }} />
             </IconButton>
             <IconButton
-              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}>
+              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}
+            >
               <InstagramIcon sx={{ fontSize: "16px", color: "black" }} />
             </IconButton>
             <IconButton
-              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}>
+              sx={{ backgroundColor: "white", maxHeight: 25, maxWidth: 25 }}
+            >
               <YouTubeIcon sx={{ fontSize: "16px", color: "black" }} />
             </IconButton>
           </Box>
@@ -105,7 +110,8 @@ const Footer = () => {
           <List>
             <ListItem disablePadding>
               <ListItemText
-                primaryTypographyProps={{ fontSize: "10px", mt: -0.5 }}>
+                primaryTypographyProps={{ fontSize: "10px", mt: -0.5 }}
+              >
                 Terms & Conditions
               </ListItemText>
             </ListItem>

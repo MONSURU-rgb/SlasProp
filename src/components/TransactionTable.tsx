@@ -1,12 +1,11 @@
-import React from "react";
+import CircleIcon from "@mui/icons-material/Circle";
+import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import CircleIcon from "@mui/icons-material/Circle";
-import Paper from "@mui/material/Paper";
 
 const transactionData = [
   {
@@ -69,7 +68,8 @@ const TransactionTable = () => {
           {transactionData.map((trans) => (
             <TableRow
               key={trans.transactionID}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
               <TableCell component="th" scope="row" sx={{ color: "grey" }}>
                 {trans.transactionID}
               </TableCell>
@@ -82,7 +82,8 @@ const TransactionTable = () => {
                   color:
                     statusColors[trans.status as StatusColorProps] ?? "grey",
                   textTransform: "capitalize",
-                }}>
+                }}
+              >
                 <CircleIcon sx={{ fontSize: 12 }} />
                 &nbsp;{trans.status}
               </TableCell>

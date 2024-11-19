@@ -1,5 +1,6 @@
-import React from "react";
-
+import Looks3Icon from "@mui/icons-material/Looks3";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import {
   Box,
   FormControlLabel,
@@ -7,9 +8,6 @@ import {
   Switch,
   Typography,
 } from "@mui/material";
-import Looks3Icon from "@mui/icons-material/Looks3";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Footer from "./Footer";
 
 const Notifications = () => {
@@ -31,7 +29,8 @@ const Notifications = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Notifcations
           </Typography>
@@ -44,13 +43,15 @@ const Notifications = () => {
                 maxWidth: 300,
                 minHeight: 400,
                 backgroundColor: "#F4F4F4",
-              }}>
+              }}
+            >
               <Box
                 sx={{
                   borderBottom: "1px solid lightgrey",
                   p: 1,
                   display: " flex",
-                }}>
+                }}
+              >
                 <FormGroup sx={{ flexGrow: 1 }}>
                   <FormControlLabel
                     control={<Switch defaultChecked />}
@@ -65,7 +66,8 @@ const Notifications = () => {
                   borderBottom: "1px solid lightgrey",
                   p: 1,
                   display: " flex",
-                }}>
+                }}
+              >
                 <FormGroup sx={{ flexGrow: 1 }}>
                   <FormControlLabel
                     control={<Switch defaultChecked />}
@@ -80,7 +82,8 @@ const Notifications = () => {
                   borderBottom: "1px solid lightgrey",
                   p: 1,
                   display: " flex",
-                }}>
+                }}
+              >
                 <FormGroup sx={{ flexGrow: 1 }}>
                   <FormControlLabel
                     control={<Switch defaultChecked />}
@@ -94,7 +97,8 @@ const Notifications = () => {
                   borderBottom: "1px solid lightgrey",
                   p: 1,
                   display: " flex",
-                }}>
+                }}
+              >
                 <FormGroup sx={{ flexGrow: 1 }}>
                   <FormControlLabel
                     control={<Switch defaultChecked />}
@@ -124,7 +128,8 @@ const Notifications = () => {
                         fontSize: "12px",
                         fontWeight: "bold",
                         flexGrow: 1,
-                      }}>
+                      }}
+                    >
                       From Field Tasks
                     </Typography>
                     <Typography sx={{ fontSize: "9px", color: "orange" }}>
@@ -139,7 +144,8 @@ const Notifications = () => {
                         color: "gray",
                         flexGrow: 1,
                         fontSize: "12px",
-                      }}>
+                      }}
+                    >
                       {note}
                     </Typography>
                     <MoreVertIcon sx={{ color: "lightgrey" }} />

@@ -1,7 +1,5 @@
-import React from "react";
-
-import { Box, Typography, Button } from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import { Box, Button, Typography } from "@mui/material";
 import Footer from "./Footer";
 import TransactionTable from "./TransactionTable";
 
@@ -15,7 +13,8 @@ const TaxPaymentReport = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Tax Payment By End Users
           </Typography>
@@ -27,7 +26,8 @@ const TaxPaymentReport = () => {
               borderRadius: "0px",
               p: 2,
               textTransform: "capitalize",
-            }}>
+            }}
+          >
             <ExitToAppIcon /> &nbsp;Export
           </Button>
         </Box>
@@ -39,7 +39,8 @@ const TaxPaymentReport = () => {
               fontSize: "14px",
               mr: 4,
               fontWeight: "bold",
-            }}>
+            }}
+          >
             Select Date Range
           </Typography>
         </Box>

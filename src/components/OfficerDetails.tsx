@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+
 import { useLocation } from "react-router-dom";
-import OfficerDetailNavBar from "./OfficerDetailNavBar";
 import Footer from "./Footer";
+import OfficerDetailNavBar from "./OfficerDetailNavBar";
 
 const OfficerDetails = () => {
   const { state } = useLocation();
@@ -17,7 +17,8 @@ const OfficerDetails = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Officer Details
           </Typography>
@@ -32,7 +33,8 @@ const OfficerDetails = () => {
               pt: 1,
               px: 1,
               borderRadius: "4px",
-            }}>
+            }}
+          >
             ID: #{state?.officer.officerID}
           </Typography>
 
@@ -42,21 +44,26 @@ const OfficerDetails = () => {
                 display: "flex",
                 flexDirection: "column",
                 borderRight: "2px solid lightgrey",
-              }}>
+              }}
+            >
               <Typography
-                sx={{ color: "grey", fontSize: "12px", pl: 2, mr: 15 }}>
+                sx={{ color: "grey", fontSize: "12px", pl: 2, mr: 15 }}
+              >
                 Officer Name
                 <Typography
-                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}>
+                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}
+                >
                   {state?.officer.name}
                 </Typography>
               </Typography>
 
               <Typography
-                sx={{ color: "grey", mt: 1, fontSize: "12px", pl: 2, mr: 15 }}>
+                sx={{ color: "grey", mt: 1, fontSize: "12px", pl: 2, mr: 15 }}
+              >
                 Contact Number
                 <Typography
-                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}>
+                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}
+                >
                   {state?.officer.mobileNumber}
                 </Typography>
               </Typography>
@@ -67,21 +74,26 @@ const OfficerDetails = () => {
                 display: "flex",
                 flexDirection: "column",
                 borderRight: "2px solid lightgrey",
-              }}>
+              }}
+            >
               <Typography
-                sx={{ color: "grey", fontSize: "12px", pl: 2, mr: 15 }}>
+                sx={{ color: "grey", fontSize: "12px", pl: 2, mr: 15 }}
+              >
                 Email ID
                 <Typography
-                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}>
+                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}
+                >
                   {state?.officer.email}
                 </Typography>
               </Typography>
 
               <Typography
-                sx={{ color: "grey", mt: 1, fontSize: "12px", pl: 2, mr: 15 }}>
+                sx={{ color: "grey", mt: 1, fontSize: "12px", pl: 2, mr: 15 }}
+              >
                 User Role
                 <Typography
-                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}>
+                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}
+                >
                   {state?.officer.role}
                 </Typography>
               </Typography>
@@ -91,16 +103,19 @@ const OfficerDetails = () => {
               <Typography sx={{ color: "grey", fontSize: "12px", px: 2 }}>
                 Zone
                 <Typography
-                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}>
+                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}
+                >
                   {state?.officer.zone}
                 </Typography>
               </Typography>
 
               <Typography
-                sx={{ color: "grey", mt: 1, fontSize: "12px", px: 2 }}>
+                sx={{ color: "grey", mt: 1, fontSize: "12px", px: 2 }}
+              >
                 Reporting Officer
                 <Typography
-                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}>
+                  sx={{ fontWeight: "bold", color: "black", fontSize: "12px" }}
+                >
                   {state?.officer.reportingOfficer}{" "}
                   <span style={{ color: "#DF593D" }}>
                     {" "}

@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
-import "react-quill/dist/quill.snow.css";
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
+import "react-quill/dist/quill.snow.css";
 
-import TextEditor from "./TextEditor";
 import Footer from "./Footer";
+import TextEditor from "./TextEditor";
 
 const RegistrationRules = () => {
   return (
@@ -19,7 +18,8 @@ const RegistrationRules = () => {
             borderBottom: "1px solid lightgray",
             pb: 2,
             display: "flex",
-          }}>
+          }}
+        >
           <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
             Registration Rules
           </Typography>
@@ -33,7 +33,8 @@ const RegistrationRules = () => {
               marginLeft: 2,
               padding: 2,
               textTransform: "capitalize",
-            }}>
+            }}
+          >
             Update Content
           </Link>
         </Box>
