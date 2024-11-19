@@ -1,50 +1,39 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import React, { createContext, ReactNode, useContext, useMemo } from 'react';
-import { useLocalStorage } from './use-local-storage';
+import { localService } from "@/services/local-service";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-interface AuthContextType {
-  user: any;
-  login: (data: any) => Promise<void>;
-  logout: () => void;
-}
+type AuthContextType = {};
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType | null>(null);
 
 interface AuthProviderProps {
   children: ReactNode;
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [user, setUser] = useLocalStorage('user', null);
-  const { push } = useRouter();
+  const [user, setUser] = useState<AuthContextType | null>(null);
 
-  const login = async (data: any) => {
-    setUser(data);
-    push('/dashboard');
-  };
+  useEffect(() => {
+    const storedValue = localService.getItem<AuthContextType>("user");
+    if (storedValue) setUser(storedValue);
+  }, []);
 
-  const logout = () => {
-    setUser(null);
-    push('/');
-  };
-
-  const value = useMemo(() => {
-    return {
-      user,
-      login,
-      logout,
-    };
-  }, [user]);
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = (): AuthContextType => {
+export const useAuth = (): AuthContextType | null => {
   const context = useContext(AuthContext);
+
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
+
   return context;
 };

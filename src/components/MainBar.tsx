@@ -4,25 +4,30 @@ import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOu
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import { Button, Divider } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import Badge from "@mui/material/Badge";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import InputBase from "@mui/material/InputBase";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import {
+  AppBar,
+  Badge,
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  InputBase,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
-import { useAuth } from "@/hooks/use-auth";
+import { useRouter } from "next/navigation";
+
+import Link from "next/link";
 import Logo from "../assets/Logo.png";
 
 const MainBar = () => {
-  const { logout } = useAuth();
+  const { push } = useRouter();
 
-  const handleLogout = () => {
-    logout();
-  };
+  function handleLogout() {
+    localStorage.clear();
+    push("/login");
+  }
 
   return (
     <Box sx={{ flexGrow: 1, boxShadow: "0 4px 2px -2px gray" }}>
@@ -94,7 +99,7 @@ const MainBar = () => {
               size="large"
               color="inherit"
               component={Link}
-              to="/dashboard/notifications"
+              href="/dashboard/notifications"
             >
               <Badge badgeContent={1} color="error">
                 <NotificationsNoneOutlinedIcon

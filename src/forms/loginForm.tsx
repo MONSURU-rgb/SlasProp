@@ -1,44 +1,38 @@
 "use client";
 
 import { useForm, yupResolver } from "@mantine/form";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
+  Box,
   Button,
   Container,
+  Divider,
   FormLabel,
+  IconButton,
   InputAdornment,
   TextField,
-  IconButton,
-  Box,
   Typography,
-  Divider,
 } from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Link from "next/link";
 import { object, string } from "yup";
 
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import { useLogin } from "../api/use-login";
 import { showToast } from "@/utils/toast-style";
 import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/stores/useAuthStore";
+import { useLogin } from "../api/use-login";
 
 const schema = object({
-  username: string().required(),
-  password: string()
-    .required()
-    .min(6, "Password must be at least 6 characters")
-    .matches(
-      /(?=.*[a-z])(?=.*[A-Z])/,
-      "Password must contain at least one uppercase and one lowercase letter"
-    ),
+  username: string().required("Username is required"),
+  password: string().required("Password is required"),
 });
 
 const LoginForm = () => {
   const { mutate: login } = useLogin();
+
   const [, setToken] = useLocalStorage<string>("token");
   const [, setUsername] = useLocalStorage<string>("username");
+
   const { push } = useRouter();
-  const { setToken: userToken } = useAuthStore.getState();
 
   const form = useForm({
     initialValues: {
@@ -52,11 +46,11 @@ const LoginForm = () => {
 
   async function handleSubmit({ showPassword, ...values }: typeof form.values) {
     login(values, {
-      onSuccess: (response) => {
-        setToken(response.data.access_token);
-        userToken(response.data.access_token);
-        showToast("success", <p>Login Successful! {response.message}</p>);
-        setUsername(response.data.username);
+      onSuccess: ({ data, message }) => {
+        setToken(data.access_token);
+        setUsername(data.username);
+
+        showToast("success", <p>Login Successful! {message}</p>);
         push("/dashboard");
       },
       onError: () => {
@@ -77,7 +71,8 @@ const LoginForm = () => {
         mt: 6,
         ml: 3,
         mb: 6,
-      }}>
+      }}
+    >
       <Typography
         sx={{
           fontFamily: "monospace",
@@ -85,7 +80,8 @@ const LoginForm = () => {
           fontWeight: "bold",
           mb: 1,
           px: 3,
-        }}>
+        }}
+      >
         Login
       </Typography>
 
@@ -94,7 +90,8 @@ const LoginForm = () => {
       <Box
         component="form"
         onSubmit={form.onSubmit(handleSubmit)}
-        sx={{ display: "flex", flexDirection: "column", px: 4 }}>
+        sx={{ display: "flex", flexDirection: "column", px: 4 }}
+      >
         <p style={{ color: "#26a69a", fontSize: 15 }}>
           Enter your login details to sign in.
         </p>
@@ -122,7 +119,8 @@ const LoginForm = () => {
                       "showPassword",
                       !form.values.showPassword
                     );
-                  }}>
+                  }}
+                >
                   {form.values.showPassword ? (
                     <VisibilityOff />
                   ) : (
@@ -143,7 +141,8 @@ const LoginForm = () => {
             color: "red",
             fontWeight: "bold",
             marginLeft: "auto",
-          }}>
+          }}
+        >
           Forgot Password?
         </Link>
         <Container sx={{ display: "flex", justifyContent: "center" }}>
@@ -158,7 +157,8 @@ const LoginForm = () => {
               borderRadius: "16px",
               boxShadow: "10px 10px 5px #269d91 inset",
               width: "150px",
-            }}>
+            }}
+          >
             Login
           </Button>
         </Container>

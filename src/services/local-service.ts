@@ -1,5 +1,5 @@
 class LocalService {
-  setCookie = (keyName: string, value: string) => {
+  setItem = (keyName: string, value: string) => {
     try {
       localStorage.setItem(keyName, value);
     } catch (err) {
@@ -9,9 +9,11 @@ class LocalService {
     }
   };
 
-  getCookie = (keyName: string) => {
+  getItem = <T>(keyName: string): T | null => {
     try {
-      return localStorage.getItem(keyName);
+      const value = localStorage.getItem(keyName);
+      if (value) return JSON.parse(value);
+      return null;
     } catch (err) {
       console.error(`Error retrieving cookie: ${keyName}`, err);
       return null;

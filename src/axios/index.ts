@@ -1,6 +1,5 @@
+import { localService } from "@/services/local-service";
 import axios from "axios";
-import { useAuthStore } from "../stores/useAuthStore";
-import { useLocalStorage } from "@/hooks/use-local-storage";
 
 export const axiosInstance = axios.create({
   baseURL:
@@ -13,12 +12,10 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const { token } = useAuthStore.getState();
-    const [, setToken] = useLocalStorage<string>("token");
+    const token = localService.getItem<string>("token");
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
-      setToken(token);
     }
 
     return config;
