@@ -14,6 +14,7 @@ class LocalService {
       return localStorage.getItem(keyName);
     } catch (err) {
       console.error(`Error retrieving cookie: ${keyName}`, err);
+      return null;
     }
   };
 }
