@@ -1,10 +1,11 @@
+"use client";
+
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Route, Routes } from "react-router-dom";
 import AddNewContent from "./components/AddNewContent.tsx";
-import Dashboard from "./components/Dashboard";
-import DashboardLayout from "./components/DashboardLayout";
-import Login from "./components/login-page.tsx";
+import Dashboard from "./components/Dashboard.tsx";
+import DashboardLayout from "./components/DashboardLayout.tsx";
 import ManageContent from "./components/ManageContent.tsx";
 import ManageOfficers from "./components/ManageOfficers.tsx";
 import Notifications from "./components/Notifications.tsx";
@@ -13,12 +14,13 @@ import ParcelDataPackets from "./components/ParcelDataPackets.tsx";
 import RegistrationRules from "./components/RegistrationRules.tsx";
 import Reports from "./components/Reports.tsx";
 import Tasks from "./components/Tasks.tsx";
-import TaxationRules from "./components/TaxationRules.tsx";
 import TaxPaymentReport from "./components/TaxPaymentReport.tsx";
+import TaxationRules from "./components/TaxationRules.tsx";
 import UserRoles from "./components/UserRoles.tsx";
-import { AuthProvider } from "./hooks/useAuth";
+import Login from "./components/login-page.tsx";
+import { AuthProvider } from "./hooks/use-auth.tsx";
 import Location from "./pages/Location.tsx";
-import ProtectedRoute from "./routes/ProtectedRoute";
+import ProtectedRoute from "./routes/ProtectedRoute.js";
 
 const App = () => {
   return (
@@ -46,7 +48,7 @@ const App = () => {
                 path="parcel-data-packets"
                 element={<ParcelDataPackets />}
               />
-              <Route path="location" element={<Location />} />
+              {/* <Route path="location" element={<Location />} /> */}
             </Route>
 
             <Route path="edit-taxation-rules" element={<TaxationRules />} />

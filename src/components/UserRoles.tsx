@@ -1,9 +1,12 @@
+import { useGetRoles } from "@/api/use-role";
 import Footer from "@/components/Footer";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Box, Typography } from "@mui/material";
 import AddNewRoleDrawer from "./AddNewRoleDrawer";
 
 const UserRoles = () => {
+  const { data } = useGetRoles();
+  console.log(data?.data);
   return (
     <div
       style={{
@@ -30,7 +33,26 @@ const UserRoles = () => {
       </Box>
       <div style={{ flex: 1 }}>
         <div style={{ padding: 16, marginLeft: "25%" }}>
-          <Box
+          {data?.data?.map((role) => (
+            <Box
+              key={role?.id}
+              sx={{
+                border: "1px solid lightgrey",
+                p: 3,
+                display: "flex",
+                marginRight: 2,
+                width: "fit-content",
+                cursor: "pointer",
+              }}
+            >
+              <Typography sx={{ fontWeight: "bold", fontSize: "13px" }}>
+                {role?.name}
+              </Typography>
+
+              <MoreVertIcon sx={{ color: "orange" }} />
+            </Box>
+          ))}
+          {/* <Box
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -205,7 +227,7 @@ const UserRoles = () => {
 
               <MoreVertIcon sx={{ color: "orange" }} />
             </Box>
-          </Box>
+          </Box> */}
         </div>
       </div>
 

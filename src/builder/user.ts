@@ -1,5 +1,6 @@
 import { axiosInstance } from "@/axios";
 import { ProfileData } from "./types/profile";
+import { RoleData } from "./types/roles";
 
 export const login = (params: {
   username: string;
@@ -34,9 +35,13 @@ export const register = (params: {
 export const profile = () => {
   return axiosInstance.get<{ data: ProfileData }>("/account/profile");
 };
+export const roles = () => {
+  return axiosInstance.get<{ data: RoleData[] }>("/roles");
+};
 
 export const user = {
   login,
   register,
   profile,
+  roles,
 };
